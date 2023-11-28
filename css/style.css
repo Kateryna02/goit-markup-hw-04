@@ -379,6 +379,7 @@ img {
 
 .scrol:hover .scrol-title{
     transform: translateY(0%);
+    
 }
 .scrol:focus .scrol-title{
     transform: translateY(0%);
