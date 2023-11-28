@@ -382,8 +382,9 @@ img {
     
 } */
 .scrol:hover .scrol-title,.scrol:focus .scrol-title{
-    
+   
     transform: translateY(0%);
+    transform: translateY(0%)
    
 }
 .set-button {
