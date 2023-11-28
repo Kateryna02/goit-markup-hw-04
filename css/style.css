@@ -119,6 +119,7 @@ img {
     letter-spacing: 0.02em;
     line-height: 1.5;
     display: block;
+    position: relative;
     padding: 24px 0;
 
 
