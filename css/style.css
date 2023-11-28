@@ -53,7 +53,7 @@ img {
 
 .header {
     border-bottom: 1px solid #e7e9fc;
-
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08)
 }
 
 .header>.container {
@@ -184,10 +184,11 @@ img {
     background: var(--color-main-text);
     padding-top: 188px;
     padding-bottom: 188px;
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
-            rgba(46, 47, 66, 0.7)), url(../images/people-office\ 1.jpg);
-
-
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office\ 1.jpg);
+    max-width: 1440px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .section-title-one {
@@ -227,6 +228,7 @@ img {
     background: var(--IRIS, #4D5AE5);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     margin: 0 auto;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 
 }
@@ -328,6 +330,8 @@ img {
     align-items: center;
     justify-content: center;
     background-color: #F4F4FD;
+    border-radius: 4px;
+    margin-bottom: 8px;
 }
 
 .set {
@@ -451,7 +455,7 @@ img {
     justify-content: center;
     background: var(--primary-bg-color);
     border-radius: 0px 0px 4px 4px;
-
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .name-item {
@@ -530,6 +534,11 @@ img {
 }
 
 /* section-5 */
+.section-5 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
 .general-too-link {
     color: var(--NAVY-BLUE, #2E2F42);
     text-align: center;
@@ -541,8 +550,8 @@ img {
     /* 111.111% */
     letter-spacing: 0.72px;
     text-transform: capitalize;
-    padding-top: 120px;
-    padding-bottom: 72px;
+    /* padding-top: 120px; */
+    margin-bottom: 72px;
 
 
 }
@@ -550,7 +559,7 @@ img {
 .general-link {
 
     display: flex;
-    margin-bottom: 120px;
+    /* margin-bottom: 120px; */
 
 }
 
@@ -560,9 +569,19 @@ img {
 }
 
 .general-logo {
+    height: 88px;
     padding: 16px 32px;
     border-radius: 4px;
     border: 1px solid var(--LIGHT-SLATE, #8E8F99);
+    width: calc((100% - 120px) / 6);
+
+}
+
+.general-imag {
+    width: 100%;
+    height: 100%;
+
+
 }
 
 /* footer */
@@ -594,8 +613,13 @@ img {
 .content-footer {
 
     display: flex;
+    align-items: baseline;
 
 
+}
+
+.container-logo {
+    margin-right: 120px;
 }
 
 .footer {
@@ -626,7 +650,7 @@ img {
     line-height: 1.5;
     letter-spacing: 0.32px;
     margin: 0;
-    padding-bottom: 16px;
+    margin-bottom: 16px;
 
 
 }
@@ -654,22 +678,28 @@ img {
 }
 
 .locol-logo {
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 12px 12px;
-    width: 40px;
-    height: 40px;
     background-color: #4D5AE5;
     border-radius: 50%;
-    transition: background-color 250mc cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
 
+.locol-logo-item {
+    width: 40px;
+    height: 40px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-bloc {
     display: flex;
     list-style: none;
-    gap: 24px;
+    gap: 16px;
+    justify-content: center;
 }
 
 .social-icons {
@@ -678,7 +708,7 @@ img {
 
 .locol-logo:hover,
 .locol-logo:focus {
-    background-color: #404BBF;
+   background-color: #31d0aa;
 
 }
 
@@ -689,7 +719,7 @@ img {
 
 .modal-window {
     width: 408px;
-    height: 584px;
+    min-height: 584px;
     flex-shrink: 0;
     border-radius: 4px;
     background: var(--DAIRY, #FCFCFC);
@@ -700,7 +730,8 @@ img {
     transform: translate(-50%, -50%);
     padding: 40px;
     transition: background-color 250ms ease-in-out;
-
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .backdrop {
@@ -722,7 +753,7 @@ img {
 .is-hidden {
     opacity: 0;
     visibility: hidden;
-    pointer-events: 0;
+    pointer-events: none;
 
 }
 
@@ -730,10 +761,18 @@ img {
     position: absolute;
     top: 24px;
     right: 24px;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     background-color: transparent;
-    border: none;
+   border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #e7e9fc;
+border: 1px solid rgba(0, 0, 0, 0.1); 
+padding: 0;
+cursor: pointer;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 
 
 }
@@ -741,9 +780,8 @@ img {
 
 .close-button-icon {
     fill: #2E2F42;
-
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
-.current{
-    
-}
+
+.current {}
