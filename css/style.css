@@ -112,7 +112,7 @@ img {
 }
 
 .list-item-one {
-    color: var(--secondary-bg-color);
+    color: #404bbf;
     font-style: normal;
     font-size: 16px;
     font-weight: 500;
@@ -121,6 +121,7 @@ img {
     display: block;
     position: relative;
     padding: 24px 0;
+
 
 
 
@@ -143,8 +144,8 @@ img {
     color: var(--accent-pressed-state);
 }
 
-.list-item.underlinet::after {
-    content: "l";
+.list-item-one::after {
+    content: '' ;
     position: absolute;
     left: 0;
     bottom: -1px;
